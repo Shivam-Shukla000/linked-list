@@ -88,6 +88,27 @@ function linkedList() {
         }
       }
     },
+    insertAt(val, index) {
+      let num = 1;
+      let x = this.listHead;
+      while (num !== index - 1) {
+        x = x.nextNode;
+        num++;
+      }
+      let y = x.nextNode;
+      let newNode = node(val, y);
+      x.nextNode = newNode;
+    },
+    removeAt(index) {
+      let num = 1;
+      let x = this.listHead;
+      while (num !== index - 1) {
+        x = x.nextNode;
+        num++;
+      }
+      let y = x.nextNode.nextNode;
+      x.nextNode = y;
+    },
   };
 }
 function node(value = null, nextNode = null) {
@@ -109,5 +130,9 @@ console.log(newList.tail());
 console.log(newList.at(2));
 console.log(newList.contains("test2"));
 console.log(newList.contains("test5"));
-console.log(newList.toString());
 console.log(newList.find("test2"));
+console.log(newList.toString());
+newList.insertAt("test5", 2);
+console.log(newList.toString());
+newList.removeAt(3);
+console.log(newList.toString());
