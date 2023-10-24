@@ -36,7 +36,7 @@ function linkedList() {
       return x;
     },
     at(index) {
-      let num = 1;
+      let num = 0;
       let x = this.listHead;
       while (num !== index) {
         x = x.nextNode;
@@ -64,7 +64,7 @@ function linkedList() {
     },
     find(node) {
       let x = this.listHead;
-      let index = 1;
+      let index = 0;
       while (x.value !== node && x.nextNode !== null) {
         x = x.nextNode;
         index++;
@@ -89,7 +89,7 @@ function linkedList() {
       }
     },
     insertAt(val, index) {
-      let num = 1;
+      let num = 0;
       let x = this.listHead;
       while (num !== index - 1) {
         x = x.nextNode;
@@ -100,7 +100,7 @@ function linkedList() {
       x.nextNode = newNode;
     },
     removeAt(index) {
-      let num = 1;
+      let num = 0;
       let x = this.listHead;
       while (num !== index - 1) {
         x = x.nextNode;
